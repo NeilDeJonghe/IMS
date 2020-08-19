@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+
+function generatetable(){
+    var table = "";
+    var hours = 23;
+    var days = 7;
+    for(i=0; i<hours;i++){
+        table += "<tr style='border: 1px solid black;'>";
+        
+        for(k=0; k<days; k++){
+            var id = i+k*100;
+            table+="<td style='border: 1px solid black;width:50px' id="+id+">" +"..."+"</td>"; 
+        }
+        
+        table += "</tr>";
+    }
+    document.getElementById("table").innerHTML=("<table style='border: 1;border-collapse: collapse;'>"+table+'</table>');
+}
+
+function additem(){
+    var subject = document.getElementById("subject").value;
+    var hour = document.getElementById("hour").value-1;
+    var duration = document.getElementById("duration").value;
+    var day = document.getElementById("day").value-1;
+    var time = 0;
+    var newid = hour+ (day*100);
+
+    while(time!=duration){
+        var fullid = newid + time;
+        document.getElementById(fullid).innerHTML = subject;
+        time++;
+
+    }
+
+}
+function filledtime(){
+    var days = 0;
+    var hours = 0;
+    while(days<700){
+        while (hours<23){
+            var totID = days + hours;
+            if(document.getElementById(totID).innerText!="..."){
+                document.getElementById(totID).style.backgroundColor="#ADFF2F";
+            }
+            hours++;
+            
+        }
+        hours=0;
+        days = days+100;
+    }
+}
+function randomcolors(){
+    var days = 0;
+    var hours = 0;
+    while(days<700){
+        while (hours<23){
+            var totID = days + hours;
+            document.getElementById(totID).style.backgroundColor = "#"+((1<<24)*Math.random()|0).toString(16);
+            hours++;
+            
+        }
+        hours=0;
+        days = days+100;
+    }
+}
+
+function removesubject(){
+    var days = 0;
+    var hours = 0;
+    var removedsubject = document.getElementById("remsub").value;
+    while(days<700){
+        while(hours<23){
+            var totID = days + hours;
+            if(document.getElementById(totID).innerText == removedsubject){
+                document.getElementById(totID).innerHTML = "...";
+                
+            }
+            hours++;
+           
+        }
+        hours=0;
+        days = days+100;
+    }
+}
+function removecolors(){
+    var days=0;
+    var hours=0;
+    while(days<700){
+        while(hours<23){
+            var totID = hours+days;
+            document.getElementById(totID).style.backgroundColor = "#ffffff";
+            hours++;
+        }
+        days = days+100;
+        hours=0;
+    }
+
+}
+    </script>
+   
+    <title>Agenda</title>
+</head>
+<body>
+    
+      <button id="tabel" onclick="generatetable()">Genereer een tabel</button><br><br>
+      Give a subject, a day, a starting time and a duration here.<br>
+      <input type = "text" id="subject"><input type = "text" id="day"><input type = "text" id="hour"><input type = "text" id="duration"><button id = "submit" onclick= "additem()" >Add</button>
+      <button id="filled" onclick="filledtime()">Gevulde momenten</button>
+      <button id = "color" onclick="randomcolors()">geef random kleur</button>
+      <button onclick= "removecolors()">Verwijder alle kleuren</button><br><br>
+      <input type = "text" id = "remsub"><button id = "removes" onclick="removesubject()">Remove this subject</button><br><br>
+      <table id="table" style='border: 1px solid black;width: 100%;'></table>
+
+
+      </table>
+
+
+
+
+</body>
+</html>

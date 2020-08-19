@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "ExamenoefRC.js"></script>
+   
+    <title>Agenda</title>
+</head>
+<body>
+    
+      <button id="tabel" onclick="generatetable()">Genereer een tabel</button><br><br>
+      Give a subject, a day, a starting time and a duration here.<br>
+      <input type = "text" id="subject"><input type = "text" id="day"><input type = "text" id="hour"><input type = "text" id="duration"><button id = "submit" onclick= "additem()" >Add</button>
+      <button id="filled" onclick="filledtime()">Gevulde momenten</button>
+      <button id = "color" onclick="randomcolors()">geef random kleur</button>
+      <button onclick= "removecolors()">Verwijder alle kleuren</button><br><br>
+      <input type = "text" id = "remsub"><button id = "removes" onclick="removesubject()">Remove this subject</button><br><br>
+      <table id="table" style='border: 1px solid black;width: 100%;'></table>
+
+
+      </table>
+
+
+
+
+</body>
+</html>

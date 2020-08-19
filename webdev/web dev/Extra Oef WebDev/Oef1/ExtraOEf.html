@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Extra Oef 1</title>
+        <script type="text/javascript" src="ExtraOef.js"></script>
+        <link rel="stylesheet" href="ExtraOEf.css" type="text/css" ></link>
+    </head>
+    <body onload="canvascolor()" ondblclick="reload()">
+        <h1>OEFENING 1 <br/></h1>
+
+        <table>
+            <tr>
+                <th>Oefening</th>
+                <th>Result</th>
+            </tr>
+            <tr >
+                <td><img id='foto' style="filter: grayscale(100%);" width="300px" src="Oef1Foto.png" onmouseover="hovercounter()" onclick="reversecolor()" ></td>
+                <td><div>Aantal keer: <p id='hovercount' onclick="reversecolor_count()">0</p> </div> </td>
+            </tr>
+            <tr>
+                <td><canvas id="myCanvas" width="300" onclick="canvascolor(this)" ></td>
+                <td id='colorfollow' ondblclick="ColorReset()"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id='input'></input><button type="submit" id='btn' onclick="additem()">Add</button>
+                </td>
+                <td>
+                    <ul id='lijst'></ul>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+style="background-image: linear-gradient(to right, black , blue, magenta, red, yellow, green, white);"

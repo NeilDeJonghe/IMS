@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Extra Oef 2</title>
+        <script type="text/javascript" src="ExtraOef.js"></script>
+        <link rel="stylesheet" href="ExtraOEf.css" type="text/css" ></link>
+    </head>
+    <body onload="popup()">
+        <h1>OEFENING 2 <br/></h1>
+
+        <table>
+            <tr>
+                <th>Oefening</th>
+                <th style="width:200px">Result</th>
+            </tr>
+
+            <tr >
+                <td><img id="foto" src="Foto.png" width="300px" onmousemove="hovercounter()"></td>
+                <td id='hovercount' ondblclick="resethoverc()"></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="text" id="input">
+                    <button type="submit" id="enterbtn" onclick="Add()">Enter</button><br>
+                    <button type="submit" id="maxbtn" onclick="MinMax(this.id)">Max</button><br>
+                    <button type="submit" id="minbtn" onclick="MinMax(this.id)">Min</button><br>
+                    <button type="submit" id="sortbtn" onclick="Sort()">Sort</button><br>
+                    <input type="color" id="colorbtn" onchange="Color()">
+                </td>
+                <td>
+                    <ul id="list"></ul>
+                </td>
+            </tr>
+
+        </table>
+    </body>
+</html>
